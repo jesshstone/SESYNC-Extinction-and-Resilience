@@ -8,3 +8,5 @@ List of Collaborators
 - Anna McPherran
 - Zachary Masson
 - Jessica Stone
+
+Target timeline: beta completion July 26, 2019 
