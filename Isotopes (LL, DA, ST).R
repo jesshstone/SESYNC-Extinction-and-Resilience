@@ -1,19 +1,22 @@
 attach(fensterer_CM)
-DosAnasCM <- fensterer_CM
+SantoTomasCM <- fensterer_CM
 mydata <- mutate(mydata, group = factor(group), community = factor(community))
 library(ggplot2)
 
 ## Santo Tomas (fensterer_CM)
-ggplot(DosAnasCM,
-       aes(x = DosAnasCM$age, y = d18O))+
+ggplot(SantoTomasCM,
+       aes(x = SantoTomasCM$`age[ka]`, y = d18O))+
   geom_line()
-ggplot(DosAnasCM,
-       aes(x = DosAnasCM$age, y = d13C))+
+ggplot(SantoTomasCM,
+       aes(x = SantoTomasCM$`age[ka]`, y = d13C))+
   geom_line()
+
+
+##need to fix these maybe...
 plot(`age[ka]`,d13C,type="l",col="red")
 plot(`age[ka]`,d18O,type="l",col="blue")
 
-## Dos Anas (fensterer_CG)
+## Dos Anas (fensterer_Cp)
 attach(Fensterer_CP)
 DosAnasCP <- Fensterer_CP
 ggplot(DosAnasCP,
@@ -38,9 +41,9 @@ plot(LL_ISOTOPES_final$Ages,`Carbon13`,type="l",col="red")
 plot(LL_ISOTOPES_final$Ages,`Oxygen18`,type="l",col="blue")
 
 
-##correcting the ages
-DosAnasCM$age <- DosAnasCM$`age[ka]` * 1000
-DosAnasCG$age_b2k <- DosAnasCG$`age [ka b2k]`*1000 
+##correcting the ages of Santo Tomas CM
+SantoTomasCM$`age[ka]` <- SantoTomasCM$`age[ka]` * 1000
+
 
 
 
