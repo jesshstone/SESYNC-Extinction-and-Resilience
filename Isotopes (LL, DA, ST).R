@@ -26,13 +26,14 @@ plot(`age [ka b2k]`,d13C,type="l",col="red")
 plot(`age [ka b2k]`,d18O,type="l",col="blue")
 
 ## Laguna de la Leche
+## attach the NEW LL isotopes file from google drive! 
 attach(LL_isotopes)
 LL <- LL_isotopes
 ggplot(LL,
-       aes(x = depth, y = `Oxygen-18`))+
+       aes(x = LL_isotopes$ages, y = `Oxygen-18`))+
   geom_line()
 ggplot(LL,
-       aes(x = depth, y = `Carbon-13`))+
+       aes(x = LL_isotopes$ages, y = `Carbon-13`))+
   geom_line()
-plot(depth,`Carbon-13`,type="l",col="red")
-plot(depth,`Oxygen-18`,type="l",col="blue")
+plot(LL_isotopes$ages,`Carbon-13`,type="l",col="red")
+plot(LL_isotopes$ages,`Oxygen-18`,type="l",col="blue")

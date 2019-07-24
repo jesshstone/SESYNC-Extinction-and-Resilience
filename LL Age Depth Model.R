@@ -18,3 +18,15 @@ plot(LLout,
      xlab='Age (cal yrs BP)',
      ylab='Depth (cm)',
      las=1)
+
+View(LLout)
+LLout$theta
+
+ages <- predict(LLout, LL_isotopes$depth)
+ages2 <-colMeans(ages)
+
+predict(LLout, LL_isotopes$depth)
+ages <- predict(LLout, LL_isotopes$depth)
+View(ages)
+rowmeans (ages)
+ages2 <- colMeans(ages)
