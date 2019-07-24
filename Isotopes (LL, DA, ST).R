@@ -45,20 +45,14 @@ plot(LL_ISOTOPES_final$Ages,`Oxygen18`,type="l",col="blue")
 SantoTomasCM$`age[ka]` <- SantoTomasCM$`age[ka]` * 1000
 
 
-
-
-
-
 ## layering the plots (oxygen18)
+ggplot(SantoTomasCM, aes(x = SantoTomasCM$`age[ka]`, y = SantoTomasCM$d18O))+ geom_line(aes(color = 'blue'))+
+  geom_line(data = DosAnasCP, aes(x = DosAnasCP$`cal yr BP (age before 1950)`, y = DosAnasCP$d18O, color = 'red'))+
+  geom_line(data = LL_ISOTOPES_final, aes(x = LL_ISOTOPES_final$Ages, y = LL_ISOTOPES_final$Oxygen18, color = 'green'))
 
-ggplot(DosAnasCG,
-       aes(x = `age [ka b2k]`, y = d18O))+
-  geom_line()
-
-ggplot(DosAnasCM,
-       aes(x = `age[ka]`, y = d18O))+
-  geom_line()
-
-
+## layering the plots (carbon13)
+ggplot(SantoTomasCM, aes(x = SantoTomasCM$`age[ka]`, y = SantoTomasCM$d13C))+ geom_line(aes(color = 'blue'))+
+  geom_line(data = DosAnasCP, aes(x = DosAnasCP$`cal yr BP (age before 1950)`, y = DosAnasCP$d13C, color = 'red'))+
+  geom_line(data = LL_ISOTOPES_final, aes(x = LL_ISOTOPES_final$Ages, y = LL_ISOTOPES_final$Carbon13, color = 'green'))
 
 
