@@ -43,7 +43,7 @@ LL_c13 <- ggplot(LL,
 SantoTomasCM$`age[ka]` <- SantoTomasCM$`age[ka]` * 1000
 
 ## layering the plots (oxygen18)
-O18 <- ggplot(DosAnasCM, aes(x = DosAnasCM$age, y = DosAnasCM$d18O))+ geom_line(aes(color = 'Santo Tomas'))+
+O18<- ggplot(DosAnasCM, aes(x = DosAnasCM$age, y = DosAnasCM$d18O))+ geom_line(aes(color = 'Santo Tomas'))+
   geom_line(data = DosAnasCP, aes(x = DosAnasCP$`cal yr BP (age before 1950)`, y = DosAnasCP$d18O, color = 'Dos Anas'))+
   geom_line(data = LL_ISOTOPES_final, aes(x = LL_ISOTOPES_final$Ages, y = LL_ISOTOPES_final$Oxygen18, color = 'Laguna de la Leche'))+
   xlab("Age")+
