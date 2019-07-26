@@ -47,15 +47,15 @@ FossilDataplot <- ggplot(FossilData)+
   scale_x_reverse(limits = c(12000, 0))
 
 Hu_Fos_data <- ggplot(arch_calib_csv)+
-  geom_segment(aes(x=oldrange, xend=recentrange, y=y, yend=y), color='blue')+
-  scale_x_reverse(limits = c(12000, 0))+
-  geom_segment(data = FossilData, aes(x= Calibrated.min, xend= Calibrated.max, y=neworder, yend=neworder), color='red')+
-  scale_x_reverse(limits = c(12000, 0))
-  
+  geom_segment(aes(x=oldrange, xend=recentrange, y=y, yend=y, color='Archaeological Site 14C'))+
+  scale_x_reverse(limits = c(11500, 0))+
+  geom_segment(aes(x= Calibrated.min, xend= Calibrated.max, y=neworder, yend=neworder, color='LAD 14C'), data = FossilData)+
+  xlab('Age')+
+  ylab(NULL)+
+  ggtitle("Cuban Vertebrate Extinction and Human Arrival Dates") +
+  scale_x_reverse(limits = c(11500, 0)) +
+  theme(legend.title = element_blank())
 Hu_Fos_data
-
-
-
 
 FossilDataplot
 class(FossilData)
