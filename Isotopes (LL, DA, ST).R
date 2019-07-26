@@ -54,6 +54,7 @@ O18<- ggplot(DosAnasCM, aes(x = DosAnasCM$age, y = DosAnasCM$d18O))+ geom_line(a
 plot(O18)
 
 ## layering the plots (carbon13)
+
 C13 <- ggplot(DosAnasCM, aes(x = DosAnasCM$age, y = DosAnasCM$d13C))+ geom_line(aes(color = 'Santo Tomas'))+
   geom_line(data = DosAnasCP, aes(x = DosAnasCP$`cal yr BP (age before 1950)`, y = DosAnasCP$d13C, color = 'Dos Anas'))+
   geom_line(data = LL_ISOTOPES_final, aes(x = LL_ISOTOPES_final$Ages, y = LL_ISOTOPES_final$Carbon13, color = 'Laguna de la Leche'))+

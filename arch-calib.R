@@ -45,6 +45,17 @@ FossilDataplot <- ggplot(FossilData)+
   geom_segment(aes(x= Calibrated.min, xend= Calibrated.max, y=neworder, yend=neworder), color='red')+
   scale_x_reverse(limits = c(12000, 0))
 
+Hu_Fos_data <- ggplot(arch_calib_csv)+
+  geom_segment(aes(x=oldrange, xend=recentrange, y=y, yend=y), color='blue')+
+  scale_x_reverse(limits = c(12000, 0))+
+  geom_segment(data = FossilData, aes(x= Calibrated.min, xend= Calibrated.max, y=neworder, yend=neworder), color='red')+
+  scale_x_reverse(limits = c(12000, 0))
+  
+Hu_Fos_data
+
+
+
+
 FossilDataplot
 class(FossilData)
 
