@@ -35,12 +35,13 @@ HumanArrival <- ggplot(arch_calib_csv)+
   geom_segment(aes(x=oldrange, xend=recentrange, y=y, yend=y), color='blue')+
                scale_x_reverse(limits = c(12000, 0))
 HumanArrival
-
+attach(FOSSILDATA)
+FossilData <- read.csv('FOSSILDATA.csv')
 FossilData$Fossily <- rank(-FossilData$Calibrated.min)
 FossilData$neworder <- c(2, 11, 12, 9, 3, 13, 4, 10, 5, 6, 7, 14, 8, 1)
 
 
-FossilData <- read.csv('FOSSILDATA.csv')
+
 FossilDataplot <- ggplot(FossilData)+
   geom_segment(aes(x= Calibrated.min, xend= Calibrated.max, y=neworder, yend=neworder), color='red')+
   scale_x_reverse(limits = c(12000, 0))
