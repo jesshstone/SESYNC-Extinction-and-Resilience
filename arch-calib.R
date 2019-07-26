@@ -69,18 +69,5 @@ attach('fossil_Cuba_only_Species final LAD.csv')
 ??geom_segment
 
 
-O18_test <- ggplot(DosAnasCM, aes(x = age, y = d18O)) +
-  geom_line(aes(color = 'Santo Tomas'))+
-  geom_line(data = DosAnasCP, aes(x = DosAnasCP$`cal yr BP (age before 1950)`, y = DosAnasCP$d18O, color = 'Dos Anas'))+
-  geom_line(data = LL_ISOTOPES_final, aes(x = LL_ISOTOPES_final$Ages, y = LL_ISOTOPES_final$Oxygen18, color = 'Laguna de la Leche'))+
-  geom_linerange(data = arch_calib_csv, aes(x = DosAnasCM$age, ymin = arch_calib_csv$oldrange, ymax = arch_calib_csv$recentrange)+
-  xlab("Age")+
-  ylab("Oxygen 18")+
-  ggtitle("O18 Record from 3 Sites in Cuba")+
-  scale_x_reverse()+
-  theme(legend.title = element_blank())
-
-O18_test
-
 
 

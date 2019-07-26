@@ -39,6 +39,10 @@ LL_c13 <- ggplot(LL,
        aes(x = LL_ISOTOPES_final$Ages, y = `Carbon13`))+
   geom_line()
 
+##Cenote Jennifer
+attach(Cenote_Jennifer_d13C)
+
+
 ##correcting the ages of Santo Tomas CM
 SantoTomasCM$`age[ka]` <- SantoTomasCM$`age[ka]` * 1000
 
@@ -64,6 +68,38 @@ C13 <- ggplot(DosAnasCM, aes(x = DosAnasCM$age, y = DosAnasCM$d13C))+ geom_line(
   scale_x_reverse()+
   theme(legend.title = element_blank())
 plot(C13)
+
+#putting all the plots together
+install.packages("cowplot")
+library(cowplot)
+?plot_grid
+
+
+
+O18combined <- plot_grid(O18, Hu_Fos_data,
+          nrow = 3,
+          labels = "AUTO")
+C13combined <- plot_grid(C13, Hu_Fos_data,
+                         nrow = 3,
+                         labels = "AUTO")
+
+Isotopes_Dates_combined <- plot_grid(O18, C13, Hu_Fos_data,
+                         nrow = 3,
+                         labels = "AUTO")
+
+Isotopes_Dates_combined
+O18combined
+C13combined
+
+(nrow = 2)
+
+
+
+
+
+
+
+
 
 
 
